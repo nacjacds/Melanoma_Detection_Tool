@@ -13,10 +13,7 @@ Melanoma is the most aggressive type of skin cancer, and early detection is cruc
 
 This system does not replace a professional medical evaluation. Any suspicious lesion should be examined by a dermatologist for proper diagnosis and treatment. This tool in no way replaces a professional medical assessment.""", type=["jpg", "jpeg", "png"])
 
-# Añadir un texto informativo debajo del área de carga de imagen
-st.write("""
-Please ensure that the image is clear and well-lit. The quality of the image can significantly impact the accuracy of the diagnosis.
-""")
+
 
 # Si el usuario sube una imagen
 if uploaded_file is not None:
@@ -30,8 +27,13 @@ if uploaded_file is not None:
     diagnosis, certainty = predict_melanoma(processed_image)
 
     # Mostrar el resultado del diagnóstico y la certeza
-    st.write(f"**Diagnóstico:** {diagnosis}")
-    st.write(f"**Certeza:** {certainty:.2f}%")
+    st.write(f"**Diagnosis:** {diagnosis}")
+    st.write(f"**Certainty:** {certainty:.2f}%")
 
     # Mostrar la imagen cargada por el usuario
-    st.image(uploaded_file, caption="Imagen cargada", use_column_width=True)
+    st.image(uploaded_file, caption="Image loaded", use_column_width=True)
+
+    # Añadir un texto informativo debajo del área de carga de imagen
+st.write("""
+Please ensure that the image is clear and well-lit. The quality of the image can significantly impact the accuracy of the diagnosis.
+""")
