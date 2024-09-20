@@ -1,22 +1,26 @@
+import streamlit as st
 from utils import save_image, preprocess_image
 from model import predict_melanoma
-from fastapi import FastAPI, File, UploadFile
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-app = FastAPI()
+# Título de la aplicación
+st.title("Melanoma Detection Tool")
 
-@app.post("/predict/")
-async def predict(file: UploadFile = File(...)):
-    # Guarda la imagen subida
-    image_path = save_image(file)
+# Cargar imagen usando Streamlit
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
-    # Preprocesa la imagen para el modelo
+if uploaded_file is not None:
+    # Guardar la imagen
+    image_path = save_image(uploaded_file)
+
+    # Preprocesar la imagen
     processed_image = preprocess_image(image_path)
 
-    # Realiza la predicción con el modelo
-    result = predict_melanoma(processed_image)
+    # Realizar la predicción
+    diagnosis, certainty = predict_melanoma(processed_image)
 
-    # Devuelve el resultado de la predicción
-    return {"diagnosis": result}
+    # Mostrar el resultado
+    st.write(f"Diagnosis: {diagnosis}")
+    st.write(f"Certainty: {certainty:.2f}%")
+
+    # Mostrar la imagen cargada
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
