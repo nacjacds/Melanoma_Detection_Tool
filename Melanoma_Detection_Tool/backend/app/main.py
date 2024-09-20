@@ -4,7 +4,7 @@ from model import predict_melanoma
 from PIL import Image
 
 # Título de la aplicación
-st.title("Detector de Melanoma)
+st.title("Detector de Melanoma")
 
 # Subir imagen usando Streamlit
 uploaded_file = st.file_uploader("Sube una imagen lo más nítida posible de un lunar o lesión cutánea para obtener un diagnóstico del riesgo de melanoma: ", type=["jpg", "jpeg", "png"])
