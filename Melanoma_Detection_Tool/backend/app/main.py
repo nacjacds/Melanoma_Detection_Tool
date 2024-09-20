@@ -1,5 +1,5 @@
-from backend.app.utils import save_image, preprocess_image
-from backend.app.model import predict_melanoma
+from utils import save_image, preprocess_image
+from model import predict_melanoma
 from fastapi import FastAPI, File, UploadFile
 
 app = FastAPI()
