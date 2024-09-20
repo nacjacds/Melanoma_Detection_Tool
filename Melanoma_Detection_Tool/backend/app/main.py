@@ -1,6 +1,9 @@
 from utils import save_image, preprocess_image
 from model import predict_melanoma
 from fastapi import FastAPI, File, UploadFile
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 app = FastAPI()
 
