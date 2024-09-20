@@ -2,7 +2,26 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 # Cargar el modelo entrenado desde la carpeta `model/`
-model = load_model("../model/melanoma-diagnosis.keras")
+import zipfile
+from tensorflow.keras.models import load_model
+import os
+
+# Ruta al archivo comprimido .keras (si es un archivo zip)
+zip_path = "../model/melanoma-diagnosis.keras"
+
+# Ruta donde se descomprimirá
+extract_path = "../model/"
+
+# Verificar si el archivo es un zip y descomprimirlo
+if zipfile.is_zipfile(zip_path):
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_path)
+
+    # Una vez descomprimido, cargar el modelo
+    model = load_model(os.path.join(extract_path, 'melanoma-diagnosis.keras'))
+else:
+    # Si no es un zip, intentar cargar el archivo directamente
+    model = load_model(zip_path)
 
 def predict_melanoma(processed_image):
     # La imagen debe tener la forma (224, 224, 3)
