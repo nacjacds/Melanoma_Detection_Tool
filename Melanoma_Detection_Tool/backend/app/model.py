@@ -2,7 +2,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 # Cargar el modelo entrenado desde la carpeta `model/`
-model = load_model("../model/melanoma-diagnosis.keras")
+model = load_model("model/melanoma-diagnosis.keras")
 
 def predict_melanoma(processed_image):
     # La imagen debe tener la forma (224, 224, 3)
