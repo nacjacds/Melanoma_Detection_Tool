@@ -19,25 +19,38 @@ if uploaded_file is not None:
 
     # Botón para enviar la imagen
     if st.button('Diagnose'):
+        # Convertir la imagen a bytes para enviarla en la solicitud
         files = {"file": uploaded_file.getvalue()}
         url = "http://backend:8000/predict/"
         
         # Enviar la imagen al backend
-        response = requests.post(url, files={"file": uploaded_file})
+        response = requests.post(url, files=files)
         
         # Verificar la respuesta
         if response.status_code == 200:
             result = response.json()
-            diagnosis = result.get("diagnosis", ["Unknown", None])
+            diagnosis = result.get("diagnosis", [None, None])
             
-            # Formatear el diagnóstico y la certeza
-            if diagnosis[0] == "Negativo para melanoma":
-                st.success(f"The analysis indicates that the mole is *{diagnosis[0]}*. However, remain vigilant for any changes.")
+            # Mapear 0 o 1 a "Melanoma" o "NotMelanoma"
+            if diagnosis[0] == 0:
+                diagnosis_label = "Melanoma"
+            elif diagnosis[0] == 1:
+                diagnosis_label = "NotMelanoma"
             else:
-                st.warning(f"The analysis suggests that the mole could be *{diagnosis[0]}*. We recommend a visit to the dermatologist. ")
+                diagnosis_label = "Unknown"
             
-            if diagnosis[1] is not None:
-                st.write(f"We are {diagnosis[1]:.2f}% sure of this result.")
+            # Mostrar el diagnóstico
+            if diagnosis[0] == 0:
+                st.warning(f"The analysis suggests that the mole could be *{diagnosis_label}*. We recommend a visit to the dermatologist.")
+            elif diagnosis[0] == 1:
+                st.success(f"The analysis indicates that the mole is *{diagnosis_label}*. However, remain vigilant for any changes.")
+            else:
+                st.error(f"Diagnosis is *{diagnosis_label}*. Unable to determine the condition.")
+
+            # Mostrar la certeza si está disponible
+            certainty = diagnosis[1]
+            if certainty is not None:
+                st.write(f"We are {certainty:.2f}% sure of this result.")
             else:
                 st.write("We couldn't calculate the certainty level at this time.")
         else:
