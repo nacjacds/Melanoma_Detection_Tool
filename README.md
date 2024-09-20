@@ -1,12 +1,12 @@
 # Melanoma Detection Tool
 
-This project is based on **Convolutional Neural Networks (CNNs)**, which are used in computer vision for tasks such as image classification and object detection. It is a **binary classification model** using deep learning techniques. The aim of the project was to create a system capable of distinguishing between benign and malignant skin lesions, including moles and other types of skin conditions. To achieve this, I trained a convolutional neural network on a dataset of **37,000 images** of various skin lesions.
+This project is based on **Convolutional Neural Networks (CNNs)**, which are used in computer vision for tasks such as image classification and object detection. It is a **binary classification model** using deep learning techniques. The aim of the project was to create a system capable of distinguishing between benign and malignant skin lesions, including moles and other types of skin conditions. To achieve this, I trained a convolutional neural network on a dataset of **32,000 images** of various skin lesions.
 
 ## Model Overview
 
 - **Parameters**: 7.5 million
 - **Accuracy**: 96% after fine-tuning
-- **Dataset**: 37,000 images of benign and malignant skin lesions
+- **Dataset**: 32,000 images of benign and malignant skin lesions
 
 The developed model enables accurate predictions about the presence or absence of melanoma. After training, I achieved a **96% accuracy rate** in diagnosis, following fine-tuning to improve performance and minimise overfitting.
 
