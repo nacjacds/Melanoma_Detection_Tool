@@ -1,0 +1,14 @@
+# Ignorar carpetas específicas
+model_evaluation/
+models/
+notas/
+data/
+# Ignorar archivos específicos
+more_data.ipynb
+Melanoma-NoMelanoma_02_0_PRIMERO_BUENO_INTENTO_3_MERGED.ipynb
+
+# Ignorar todos los archivos temporales de Python
+*.pyc
+
+# Ignorar todos los archivos .DS_Store (común en Mac)
+.DS_Store

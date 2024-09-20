@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"  # Exponer el puerto 8000
+    networks:
+      - app-network
+    container_name: melanoma-diagnosis-backend
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8501:8501"  # Exponer el puerto 8501 para Streamlit
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    container_name: melanoma-diagnosis-frontend
+
+networks:
+  app-network:
+    driver: bridge
