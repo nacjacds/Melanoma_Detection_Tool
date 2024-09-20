@@ -1,10 +1,16 @@
 from tensorflow.keras.models import load_model
 import os
 
-# Ruta al archivo del modelo .h5
-model_path = "../model/melanoma-diagnosis.h5"
+# Ruta del directorio del modelo
+model_dir = "Melanoma_Detection_Tool/backend/model/"
 
-# Verificar si el archivo existe
+# Imprimir el contenido del directorio para verificar si el archivo está presente
+print("Archivos en la carpeta 'model':", os.listdir(model_dir))
+
+# Ruta al archivo de modelo
+model_path = os.path.join(model_dir, "melanoma-diagnosis.h5")
+
+# Verificar si el archivo de modelo existe
 if os.path.exists(model_path):
     print(f"Archivo de modelo encontrado en {model_path}. Cargando el modelo...")
     model = load_model(model_path)
