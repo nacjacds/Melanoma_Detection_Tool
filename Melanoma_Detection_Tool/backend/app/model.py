@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 import os
 
 # Ruta al archivo comprimido .keras (si es un archivo zip)
-zip_path = "../model/melanoma-diagnosis.keras"
+zip_path = "../model/melanoma-diagnosis.h5"
 
 # Ruta donde se descomprimirá
 extract_path = "../model/"
@@ -18,7 +18,7 @@ if zipfile.is_zipfile(zip_path):
         zip_ref.extractall(extract_path)
 
     # Una vez descomprimido, cargar el modelo
-    model = load_model(os.path.join(extract_path, 'melanoma-diagnosis.keras'))
+    model = load_model(os.path.join(extract_path, 'melanoma-diagnosis.h5'))
 else:
     # Si no es un zip, intentar cargar el archivo directamente
     model = load_model(zip_path)
