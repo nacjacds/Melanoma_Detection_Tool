@@ -7,7 +7,16 @@ from PIL import Image
 st.title("Melanoma Detection Tool")
 
 # Subir imagen usando Streamlit
-uploaded_file = st.file_uploader("Sube una imagen lo más nítida posible de un lunar o lesión cutánea para obtener un diagnóstico del riesgo de melanoma: ", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("""This system uses artificial intelligence to help detect potential melanomas. The model has been trained to differentiate between melanomas and other skin lesions. However, it is important to note that some lesions, which may also be cancerous, could be classified as 'Non-Melanoma'.
+
+Melanoma is the most aggressive type of skin cancer, and early detection is crucial to increase the chances of successful treatment. There are other lesions, such as Lentigo Maligna, which, although not melanomas in their initial stage, have the potential to develop into melanomas if left untreated.
+
+This system does not replace a professional medical evaluation. Any suspicious lesion should be examined by a dermatologist for proper diagnosis and treatment. This tool in no way replaces a professional medical assessment.""", type=["jpg", "jpeg", "png"])
+
+# Añadir un texto informativo debajo del área de carga de imagen
+st.write("""
+Please ensure that the image is clear and well-lit. The quality of the image can significantly impact the accuracy of the diagnosis.
+""")
 
 # Si el usuario sube una imagen
 if uploaded_file is not None:
