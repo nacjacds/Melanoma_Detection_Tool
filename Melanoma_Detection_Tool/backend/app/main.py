@@ -2,7 +2,6 @@ import streamlit as st
 from utils import save_image, preprocess_image
 from model import predict_melanoma
 from PIL import Image
-import os
 
 # Título de la aplicación
 st.title("Melanoma Detection Tool")
