@@ -8,7 +8,7 @@ import os  # Importar el módulo os
 image_path = os.path.abspath('assets/lunares.jpg')
 if os.path.exists(image_path):
     image = Image.open(image_path)
-    st.image(image, caption='Detección de Melanoma', use_column_width=True)
+    st.image(image, use_column_width=True)
 else:
     st.error(f"La imagen no se encontró en la ruta absoluta: {image_path}")
 
