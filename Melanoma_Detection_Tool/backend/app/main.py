@@ -5,7 +5,7 @@ from PIL import Image
 
 # Mostrar la imagen
 # Ruta a la imagen (relativa desde main.py)
-image_path = '../../../assets/lunares.jpg'
+image_path = '../../assets/lunares.jpg'
 try:
     image = Image.open(image_path)
     st.image(image, caption='Detección de Melanoma', use_column_width=True)
