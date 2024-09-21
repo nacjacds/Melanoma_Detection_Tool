@@ -53,3 +53,9 @@ My aim is to make the model as accurate as possible, but please be aware that th
 Disclaimer: This is an anonymous and free application, and it is not intended to replace a doctor's diagnosis. If you have any concerns about a mole or skin lesion, you should consult a healthcare professional.
 This project is part of my training as a Data Scientist, aimed at demonstrating the skills I have developed and showcasing them in my portfolio.
 """)
+
+# Enlace a tu perfil de GitHub
+st.markdown("""
+    ### Connect with me:
+    [My GitHub Profile](https://github.com/nacjacds/)
+""")
