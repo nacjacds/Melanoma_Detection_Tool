@@ -3,17 +3,14 @@ from utils import save_image, preprocess_image
 from model import predict_melanoma
 from PIL import Image
 
-# Generar la ruta absoluta de la imagen
-image_path = os.path.abspath('assets/lunares.jpg')
-
-# Verificar si la imagen está en la ruta correcta
-st.write(f"Ruta absoluta: {image_path}")  # Mostrar la ruta para verificar
-
-if os.path.exists(image_path):
+# Mostrar la imagen
+# Ruta a la imagen (relativa desde main.py)
+image_path = '../../assets/lunares.jpg'
+try:
     image = Image.open(image_path)
     st.image(image, caption='Detección de Melanoma', use_column_width=True)
-else:
-    st.error(f"La imagen no se encontró en la ruta absoluta: {image_path}")
+except FileNotFoundError:
+    st.error("La imagen no se pudo cargar. Verifica la ruta del archivo.")
 
 # Título de la aplicación
 st.title("Melanoma Detection Tool")
