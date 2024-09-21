@@ -56,6 +56,6 @@ This project is part of my training as a Data Scientist, aimed at demonstrating 
 
 # Enlace a tu perfil de GitHub
 st.markdown("""
-    #### Connect with me:
+    ##### Connect with me:
     [Nacho Jacquot: GitHub Profile](https://github.com/nacjacds/)
 """)
