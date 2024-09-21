@@ -4,9 +4,13 @@ from model import predict_melanoma
 from PIL import Image
 
 # Mostrar la imagen
-image_path = '../../../assets/lunares.jpg'  # Cambia esto por la ruta de tu imagen
-image = Image.open(image_path)
-st.image(image, caption='Detección de Melanoma', use_column_width=True)
+# Ruta a la imagen (relativa desde main.py)
+image_path = '../../../assets/lunares.jpg'
+try:
+    image = Image.open(image_path)
+    st.image(image, caption='Detección de Melanoma', use_column_width=True)
+except FileNotFoundError:
+    st.error("La imagen no se pudo cargar. Verifica la ruta del archivo.")
 
 # Título de la aplicación
 st.title("Melanoma Detection Tool")
