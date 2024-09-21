@@ -3,6 +3,11 @@ from utils import save_image, preprocess_image
 from model import predict_melanoma
 from PIL import Image
 
+# Mostrar la imagen
+image_path = '../../../assets/lunares.jpg'  # Cambia esto por la ruta de tu imagen
+image = Image.open(image_path)
+st.image(image, caption='Detección de Melanoma', use_column_width=True)
+
 # Título de la aplicación
 st.title("Melanoma Detection Tool")
 
