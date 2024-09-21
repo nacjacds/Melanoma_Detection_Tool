@@ -6,10 +6,6 @@ import os  # Importar el módulo os
 
 # Generar la ruta absoluta de la imagen
 image_path = os.path.abspath('assets/lunares.jpg')
-
-# Verificar si la imagen está en la ruta correcta
-st.write(f"Ruta absoluta: {image_path}")  # Mostrar la ruta para verificar
-
 if os.path.exists(image_path):
     image = Image.open(image_path)
     st.image(image, caption='Detección de Melanoma', use_column_width=True)
