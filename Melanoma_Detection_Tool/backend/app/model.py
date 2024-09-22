@@ -4,7 +4,7 @@ import numpy as np
 
 # Ruta relativa al archivo .keras
 model_dir = os.path.dirname(__file__)  # Obtiene el directorio actual del archivo .py
-model_path = os.path.join(model_dir, '..', 'model', 'best_melanomaornot_model_02_0_final.keras')  # Apunta al archivo dentro de la carpeta 'model'
+model_path = os.path.join(model_dir, '..', 'model', 'melanoma_3-diagnosis2.keras')  # Apunta al archivo dentro de la carpeta 'model'
 
 # Verifica si el archivo existe y carga el modelo
 if os.path.exists(model_path):
