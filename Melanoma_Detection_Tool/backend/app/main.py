@@ -16,7 +16,7 @@ else:
 st.title("Melanoma Detection Tool")
 
 # Subir imagen usando Streamlit
-uploaded_file = st.file_uploader("""Upload the clearest possible image of a mole or skin lesion to receive a melanoma risk diagnosis. please be aware that the algorithm's effectiveness may be influenced by factors such as the image's characteristics, angle, lighting, contrast, and overall quality.""", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("""Upload the clearest possible image of a mole or skin lesion to receive a melanoma risk diagnosis. Please be aware that the algorithm's effectiveness may be influenced by factors such as the image's characteristics, angle, lighting, contrast, and overall quality.""", type=["jpg", "jpeg", "png"])
 
 
 
