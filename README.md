@@ -1,3 +1,4 @@
+![Header Image](assets/lunares.jpg)
 # Melanoma Detection Tool
 
 This project is based on **Convolutional Neural Networks (CNNs)**, which are used in computer vision for tasks such as image classification and object detection. It is a **binary classification model** using deep learning techniques. The aim of the project was to create a system capable of distinguishing between benign and malignant skin lesions, including moles and other types of skin conditions. To achieve this, I trained a convolutional neural network on a dataset of **32,000 images** of various skin lesions.
@@ -29,7 +30,7 @@ The application was then deployed on **Streamlit**, making it accessible to anyo
 ## Test the Model
 
 You can test the model here:
-[https://melanomadetectiontool-nacjacds.streamlit.app/](https://melanomadetectiontool-nacjacds.streamlit.app/)
+[https://melanomadetection-nacjacds.streamlit.app/](https://melanomadetection-nacjacds.streamlit.app/)
 
 ## How to Run the Project Locally
 
