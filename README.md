@@ -29,7 +29,7 @@ The application was then deployed on **Streamlit**, making it accessible to anyo
 ## Test the Model
 
 You can test the model here:
-[https://melanomadetectiontool-nacjacds.streamlit.app/](https://melanomadetectiontool-nacjacds.streamlit.app/)
+[https://melanomadetection-nacjacds.streamlit.app/](https://melanomadetection-nacjacds.streamlit.app/)
 
 ## How to Run the Project Locally
 
